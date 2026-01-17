@@ -1,6 +1,7 @@
 *.egg-info/
 .coverage
-.pyc
 __pycache__
 dist/
 /build
+*.un~
+*.pyc
