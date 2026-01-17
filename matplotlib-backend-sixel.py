@@ -18,10 +18,15 @@ if sys.flags.interactive:
 class FigureManagerSixel(FigureManagerBase):
     def show(self):
         fd, path = tempfile.mkstemp(suffix=".png")
-        os.close(fd)  # critical on Windows
+        os.close(fd)  # fixes Windows permission errors
         self.canvas.figure.savefig(path, bbox_inches="tight", format="png")
-        sixel_convert = SixelConverter(path)
-        sixel_convert.write(sys.stdout)
+
+        # Dump entire image at once
+        s = SixelConverter(path, f8bit=False, ncolor=256, alpha_threshold=0, chromakey=False, fast=False).getvalue()
+        sys.stdout.buffer.write(s.encode("ascii"))
+        sys.stdout.buffer.write(b"\n")
+        sys.stdout.buffer.flush()
+
         os.remove(path)
 
 
