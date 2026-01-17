@@ -9,7 +9,7 @@ classifiers = [
     "Topic :: Terminals",
 ]
 dependencies = ["matplotlib", "Pillow"]
-name = "matplotlib-backend-sixel"
+name = "matplotlib-sixel-backend"
 license = "GPL-3.0-or-later"
 readme = "README.md"
 requires-python = ">=3.6"
@@ -27,8 +27,8 @@ dev = [
 ]
 
 [project.urls]
-"Bug Tracker" = "https://github.com/ctorney/matplotlib-backend-sixel/issues"
-"Homepage" = "https://github.com/ctorney/matplotlib-backend-sixel"
+"Bug Tracker" = "https://github.com/jpkline/matplotlib-sixel-backend/issues"
+"Homepage" = "https://github.com/jpkline/matplotlib-sixel-backend"
 
 [tool.ruff]
 line-length = 120
