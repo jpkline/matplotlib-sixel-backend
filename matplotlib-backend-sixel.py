@@ -1,7 +1,8 @@
 # SPDX-License-Identifier: CC0-1.0
 
 import sys
-from tempfile import NamedTemporaryFile
+import tempfile
+import os
 
 from matplotlib import interactive, is_interactive
 from matplotlib._pylab_helpers import Gcf
@@ -16,10 +17,12 @@ if sys.flags.interactive:
 
 class FigureManagerSixel(FigureManagerBase):
     def show(self):
-        with NamedTemporaryFile() as temppng:
-            self.canvas.figure.savefig(temppng.name, bbox_inches="tight", format="png")
-            sixel_convert = SixelConverter(temppng)
-            sixel_convert.write(sys.stdout)
+        fd, path = tempfile.mkstemp(suffix=".png")
+        os.close(fd)  # critical on Windows
+        self.canvas.figure.savefig(path, bbox_inches="tight", format="png")
+        sixel_convert = SixelConverter(path)
+        sixel_convert.write(sys.stdout)
+        os.remove(path)
 
 
 class FigureCanvasSixel(FigureCanvasAgg):
