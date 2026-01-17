@@ -6,7 +6,8 @@ from matplotlib import interactive, is_interactive
 from matplotlib._pylab_helpers import Gcf
 from matplotlib.backend_bases import FigureManagerBase, _Backend
 from matplotlib.backends.backend_agg import FigureCanvasAgg
-from sixel.converter import SixelConverter
+
+from .converter import SixelConverter
 
 # XXX heuristic for interactive repl
 if sys.flags.interactive:
