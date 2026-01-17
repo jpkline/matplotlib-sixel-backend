@@ -1,8 +1,6 @@
-# SPDX-License-Identifier: CC0-1.0
-
+import os
 import sys
 import tempfile
-import os
 
 from matplotlib import interactive, is_interactive
 from matplotlib._pylab_helpers import Gcf

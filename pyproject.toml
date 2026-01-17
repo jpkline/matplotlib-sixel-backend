@@ -1,45 +1,36 @@
 [build-system]
-build-backend = "hatchling.build"
-requires = ["hatchling"]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
 
 [project]
 classifiers = [
-  "Programming Language :: Python :: 3",
-  "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
-  "Framework :: Matplotlib",
-  "Topic :: Terminals"
+    "Programming Language :: Python :: 3",
+    "Framework :: Matplotlib",
+    "Topic :: Terminals",
 ]
-dependencies = ["matplotlib", "sixel @ git+https://github.com/jpkline/python-sixel.git"]
-description = "show matplotlib plots directly in your sixel-enabled terminal"
+dependencies = [
+    "matplotlib",
+    "sixel @ git+https://github.com/jpkline/python-sixel.git",
+]
 name = "matplotlib-backend-sixel"
 readme = "README.md"
 requires-python = ">=3.6"
-version = "1.1.0"
+version = "1.2.0"
 
 [project.optional-dependencies]
 dev = [
-  "codespell",
-  "coverage",
-  "numpy",
-  "pre-commit",
-  "pytest",
-  "ruff>=0.5.3; python_version>='3.7'",
-  "ruff<0.5.3; python_version=='3.6'"
+    "codespell",
+    "coverage",
+    "numpy",
+    "pre-commit",
+    "pytest",
+    "ruff>=0.5.3; python_version>='3.7'",
+    "ruff<0.5.3; python_version=='3.6'",
 ]
 
 [project.urls]
 "Bug Tracker" = "https://github.com/ctorney/matplotlib-backend-sixel/issues"
 "Homepage" = "https://github.com/ctorney/matplotlib-backend-sixel"
-
-[tool.coverage.report]
-fail_under = 70
-show_missing = false
-
-[tool.coverage.run]
-include = ["matplotlib-backend-sixel.py"]
-
-[tool.hatch.build]
-only-include = ["matplotlib-backend-sixel.py"]
 
 [tool.ruff]
 line-length = 120
@@ -47,5 +38,5 @@ line-length = 120
 [tool.ruff.lint]
 extend-select = ["C901", "I", "RUF022"]
 
-[tool.hatch.metadata]
-allow-direct-references = true
+[tool.setuptools]
+package-dir = { "" = "src" }

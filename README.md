@@ -39,3 +39,7 @@ This is forked from [ctorney](https://github.com/ctorney/matplotlib-backend-sixe
 Internally, this backend is somewhat based on matplotlib's IPython support, and is a hybrid of image and GUI backend types. It works by using matplotlib's `Agg` backend to render the plot, and then calls `python-sixel` to convert to sixel format and then cat the image to your terminal. This means that plotting works as expected, but the image drawn to your terminal isn't interactive and animations aren't supported.
 
 ![Test](https://github.com/vincentqb/matplotlib-backend-sixel/actions/workflows/python-app.yml/badge.svg)
+
+## Licensing
+
+This project is forked from [vincentqb](https://github.com/vincentqb/matplotlib-backend-sixel) which was licensed under CC0. All modifications from that fork are licensed under GPL-3.0 or later.
