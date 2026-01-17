@@ -9,7 +9,7 @@ classifiers = [
   "Framework :: Matplotlib",
   "Topic :: Terminals"
 ]
-dependencies = ["matplotlib", "sixel"]
+dependencies = ["matplotlib", "sixel @ git+https://github.com/jpkline/python-sixel.git"]
 description = "show matplotlib plots directly in your sixel-enabled terminal"
 name = "matplotlib-backend-sixel"
 readme = "README.md"
