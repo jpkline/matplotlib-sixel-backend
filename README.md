@@ -42,4 +42,4 @@ Internally, this backend is somewhat based on matplotlib's IPython support, and 
 
 ## Licensing
 
-This project is forked from [vincentqb](https://github.com/vincentqb/matplotlib-backend-sixel) which was licensed under CC0. All modifications from that fork are licensed under GPL-3.0 or later.
+This project is forked from [vincentqb](https://github.com/vincentqb/matplotlib-backend-sixel) which was licensed under CC0. All other modifications are licensed under GPL-3.0 or later. This project also incorporates modified files originally from [sbamboo](https://github.com/sbamboo/python-sixel), which are licensed under GPL-3.0 or later. The overall project license is GPL-3.0 or later.
